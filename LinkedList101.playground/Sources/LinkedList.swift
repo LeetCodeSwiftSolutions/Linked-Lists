@@ -57,4 +57,17 @@ public struct LinkedList<Value>: CustomStringConvertible {
         return currentNode
     }
     
+    
+    // Método para insertar un nuevo nodo después de haber encontrado el nodo en un índice en particular
+    @discardableResult
+    public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
+        // Si el método insert se llama sobre el nodo tail, se usa el método append.
+        guard tail !== node else {
+            append(value)
+            return tail!
+        }
+        // Si se llama sobre cualquier otro nodo, cambiamos el nodo "next" de ese nodo, y al nuevo nodo, le ponemos como next, el que ya estaba como next en el nodo original.
+        node.next = Node(value: value, next: node.next)
+        return node.next!
+    }
 }

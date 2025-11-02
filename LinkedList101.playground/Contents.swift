@@ -29,3 +29,23 @@
 //list.append(3)
 //
 //print(list)
+
+// - - -
+
+// Ejemplo de insertar nodo después de otro
+var list = LinkedList<Int>()
+list.push(1)
+list.push(2)
+list.push(3)
+
+print("Lista antes de insertar nodo: \(list)")
+
+if let middleNode = list.node(at: 1) {
+    list.insert(10, after: middleNode)
+}
+
+print("Lista después de insertar nodo: \(list)")
+
+
+
+
