@@ -4,6 +4,7 @@ Dada la cabeza de una lista enlazada ordenada, elimina todos los nodos que sean 
 Given the head of a sorted linked list, remove all duplicate nodes so that each value appears only once, and return the resulting sorted list. For example, [1,1,2] becomes [1,2] and [1,1,2,3,3] becomes [1,2,3]. The list length is between 0 and 300 nodes, node values range from -100 to 100, and the input list is guaranteed to be sorted in ascending order.
  */
 
+
 /// Clase dada por Leetcode
 public class ListNode: CustomStringConvertible {
     public var val: Int
@@ -40,7 +41,6 @@ func deleteDuplicates(_ head: ListNode?) -> ListNode? {
 
     return newHead
 }
-
 
 ///Pruebas
 deleteDuplicates(

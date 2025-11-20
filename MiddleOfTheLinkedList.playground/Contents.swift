@@ -1,6 +1,8 @@
-/* Dada la cabeza de una lista simplemente enlazada, devuelve el nodo medio; si hay dos nodos medios, devuelve el segundo. En el formato del problema, se retorna la sublista que inicia en ese nodo. Ejemplos: [1,2,3,4,5] → [3,4,5]; [1,2,3,4,5,6] → [4,5,6]. Restricciones: número de nodos entre 1 y 100, valores de nodo entre 1 y 100.
+/* NODO CENTRAL DE UNA LISTA SIMPLEMENTE ENLAZADA
+ Dada la cabeza de una lista simplemente enlazada, devuelve el nodo medio; si hay dos nodos medios, devuelve el segundo. En el formato del problema, se retorna la sublista que inicia en ese nodo. Ejemplos: [1,2,3,4,5] → [3,4,5]; [1,2,3,4,5,6] → [4,5,6]. Restricciones: número de nodos entre 1 y 100, valores de nodo entre 1 y 100.
  
  Given the head of a singly linked list, return the middle node; if there are two middle nodes, return the second one. In this problem’s format, you return the sublist starting at that node. Examples: [1,2,3,4,5] → [3,4,5]; [1,2,3,4,5,6] → [4,5,6]. Constraints: number of nodes in [1,100], node values in [1,100]. */
+
 
 /// Clase dada por Leetcode
 public class ListNode: CustomStringConvertible {
@@ -38,6 +40,7 @@ func middleNode(_ head: ListNode?) -> ListNode? {
     return currentNode
 }
 
+/// Pruebas
 print(middleNode(ListNode(13, ListNode(22, ListNode(81, ListNode(9))))))
 
 

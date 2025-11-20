@@ -1,7 +1,10 @@
-/* Se dan dos listas ligadas no vacías que representan enteros no negativos, con dígitos en orden inverso y un dígito por nodo. Suma ambos números y devuelve la suma como otra lista ligada en el mismo formato, propagando el acarreo cuando sea necesario y manejando longitudes distintas. Ejemplo: [2,4,3] + [5,6,4] → [7,0,8] (342 + 465 = 807). Restricciones: cada lista tiene de 1 a 100 nodos, 0 ≤ Node.val ≤ 9, sin ceros a la izquierda salvo el número 0.
+/* SUMAR DOS NÚMEROS QUE PROVIENEN DE LISTAS SIMPLEMENTE ENLAZADAS
+ Se dan dos listas ligadas no vacías que representan enteros no negativos, con dígitos en orden inverso y un dígito por nodo. Suma ambos números y devuelve la suma como otra lista ligada en el mismo formato, propagando el acarreo cuando sea necesario y manejando longitudes distintas. Ejemplo: [2,4,3] + [5,6,4] → [7,0,8] (342 + 465 = 807). Restricciones: cada lista tiene de 1 a 100 nodos, 0 ≤ Node.val ≤ 9, sin ceros a la izquierda salvo el número 0.
 
  You are given two non-empty linked lists representing non-negative integers, with digits stored in reverse order and one digit per node. Add the two numbers and return the sum as a linked list in the same format, carrying over as needed and handling different lengths. Example: [2,4,3] + [5,6,4] → [7,0,8] (342 + 465 = 807). Constraints: each list has 1 to 100 nodes, 0 ≤ Node.val ≤ 9, no leading zeros except for the number 0. */
 
+
+/// Clase dada por LeetCode
 public class ListNode: CustomStringConvertible {
     public var val: Int
     public var next: ListNode?
@@ -15,6 +18,7 @@ public class ListNode: CustomStringConvertible {
     }
 }
 
+/// Solución original
 func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     // Comenzamos adquiriendo los valores de cada nodo en esta llamada, la 1er llamada es a los valores de head, que son las cifras de unidades en el número.
     let val1 = l1?.val
@@ -43,7 +47,7 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     return node // Este nodo contendrá el resultado final después de todas las iteraciones de la función recursiva.
 }
 
-
+/// Pruebas
 print(addTwoNumbers(ListNode(2, ListNode(4, ListNode(3))), ListNode(5, ListNode(6, ListNode(4)))))
 
 
