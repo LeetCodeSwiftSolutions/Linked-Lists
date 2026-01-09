@@ -42,8 +42,30 @@ func deleteDuplicates(_ head: ListNode?) -> ListNode? {
     return newHead
 }
 
-///Pruebas
-deleteDuplicates(
+/// Solución original, con mejor manejo de nodos. Time complexity: O(n), Space complexity: O(1). Beats 100% & 18%
+func deleteDuplicatesOptimized(_ head: ListNode?) -> ListNode? {
+    // Handle edge cases
+    guard head != nil else { return nil }
+    // We'll use two pointers
+    let result = head
+    var current = head!.next // current filters repeated nodes and iterates through the list
+    var trail = head // trail is the last node of the result list
+    // Iterate through the entire list with current
+    while current != nil {
+        // If equal, move current forward and disconnect from trail
+        if trail!.val == current!.val {
+            trail!.next = nil
+        } else { // If different, connect trail to current and move both forward
+            trail!.next = current
+            trail = current
+        }
+        current = current!.next
+    }
+    return result
+}
+
+/// Test cases
+deleteDuplicatesOptimized(
     ListNode(1,
              ListNode(3,
                       ListNode(4,
@@ -59,4 +81,4 @@ deleteDuplicates(
             )
 )
 
-deleteDuplicates(nil)
+deleteDuplicatesOptimized(nil)
